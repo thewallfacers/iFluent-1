@@ -23,21 +23,21 @@ default: &default
 
 development:
   <<: *default
-  database: ifluent_development
+  database: d16ilieuqj2r8t
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
   # When left blank, postgres will use the default role. This is
   # the same name as the operating system user that initialized the database.
-  #username: ifluent
+  username: plooxohbiwwbsa
 
   # The password associated with the postgres role (username).
-  #password:
+  password: c6fd5c5a3b2c87b0a8d98afc47aa83fca70a230fce0e45c98f5deec0089846e2
 
   # Connect on a TCP socket. Omitted by default since the client uses a
   # domain socket that doesn't need configuration. Windows does not have
   # domain sockets, so uncomment these lines.
-  #host: localhost
+  host: localhost
 
   # The TCP port the server listens on. Defaults to 5432.
   # If your server runs on a different port number, change accordingly.
@@ -71,7 +71,7 @@ test:
 # On Heroku and other platform providers, you may have a full connection URL
 # available as an environment variable. For example:
 #
-#   DATABASE_URL="postgres://myuser:mypass@localhost/somedatabase"
+#   DATABASE_URL="postgres://plooxohbiwwbsa:c6fd5c5a3b2c87b0a8d98afc47aa83fca70a230fce0e45c98f5deec0089846e2@ec2-54-211-160-34.compute-1.amazonaws.com:5432/d16ilieuqj2r8t"
 #
 # You can use this database configuration with:
 #
