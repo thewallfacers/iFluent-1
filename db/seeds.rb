@@ -61,22 +61,24 @@ ActiveRecord::Base.transaction do
         LessonItem.create!(item)
     end
 
-    # time_slots - 10/2019- 12/2019
-    (10..12).each do |month|
-        (1..31).each do |day|
-            (0..24).each do |hour|
-                next if month.odd? && day > 30
-                start_time = DateTime.new(2019, month, day, hour, 0)
-                TimeSlot.create({
-                    start_time: start_time,
-                })
-                TimeSlot.create({
-                    start_time: start_time + 30.minutes,
-                })
+    current_year = Time.new.year
+    next_year = current_year + 1
+    [current_year,next_year].each do |year|
+        (10..12).each do |month|
+            (1..31).each do |day|
+                (0..24).each do |hour|
+                    next if month.odd? && day > 30
+                    start_time = DateTime.new(year, month, day, hour, 0)
+                    TimeSlot.create({
+                        start_time: start_time,
+                    })
+                    TimeSlot.create({
+                        start_time: start_time + 30.minutes,
+                    })
+                end
             end
         end
     end
-
     # # time_slots - 1/2020- 9/2020
     # (1..9).each do |month|
     #     (1..31).each do |day|
